@@ -1,0 +1,7 @@
+<% if @email.read == true %>
+    document.getElementById('btn-read').innerHTML = "Marquer comme non-lu";
+    document.getElementById('<%= @email.id %>').style.color = 'grey';
+<% else %>
+    document.getElementById('btn-read').innerHTML = "Marquer comme lu";
+    document.getElementById('<%= @email.id %>').style.color = 'black';
+<% end %>

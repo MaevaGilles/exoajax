@@ -1,0 +1,10 @@
+<div class="mail-box">
+    <h4 class="text-center mt-5">Object : <%= @email.object %></h4>
+    <p class="text-center"><%= @email.body %></p>
+    <div class="d-flex justify-content-around">
+        <%= button_to "Supprimer", @email, class: "btn btn-danger", method: :delete, remote: true %>
+        <%= button_to @email, class: "btn btn-success", method: :put, remote: true do %>
+            <div id="btn-read">Marquer comme non-lu</div>
+        <% end %>
+    </div>
+</div>

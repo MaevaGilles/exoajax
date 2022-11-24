@@ -1,0 +1,18 @@
+<div class="section-email">
+  <div class="email-form">
+    <%=form_tag url_for(action: 'create'), method: 'post', remote: true do %> 
+      <%= submit_tag "Recevoir un email", class: 'btn btn-secondary float-right mb-5' %>
+    <% end %>
+  </div>
+
+  <div id="grid">
+    <div id="cell-name"><p>Liste des emails</p></div>
+    <div id="cell-name"><p>Emails sélectionnés</p></div>
+    <div id="email-list">
+      <% @emails.each do |email|%>
+        <%= render partial: "email_object", locals: { email: email} %>
+      <% end %>
+    </div>
+    <div id="email-div"></div>
+  </div>
+</div>
